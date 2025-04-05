@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clínica Médica</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('https://github.com/Per-Arredondo/Clinica_medica/blob/main/Fondo%20JPG.jpeg?raw=true');
+            background-size: cover;
+            background-position: center;
+            color: #333;
+        }
+
+        header {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            text-align: center;
+        }
+
+        header img {
+            width: 150px;
+            border-radius: 10px;
+        }
+
+        .container {
+            width: 90%;
+            margin: 0 auto;
+            padding: 40px 0;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2 {
+            color: #2a7f4f;
+            text-align: center;
+        }
+
+        .accordion {
+            margin: 20px 0;
+        }
+
+        .accordion-item {
+            margin-bottom: 10px;
+            padding: 15px;
+            background-color: #f1f1f1;
+            border-radius: 8px;
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .accordion-item:hover {
+            background-color: #ddd;
+        }
+
+        .accordion-content {
+            display: none;
+            padding: 10px;
+            background-color: #e2e2e2;
+            border-radius: 8px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        input, select, textarea {
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #2a7f4f;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #249d44;
+        }
+
+        .confirmation-message {
+            color: #28a745;
+            text-align: center;
+            font-size: 16px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <img src="https://github.com/Per-Arredondo/Clinica_medica/blob/main/logo%20ejemplo.png?raw=true" alt="Logo Clínica Médica">
+</header>
+
+<div class="container">
+    <section>
+        <h1>¿Quiénes somos?</h1>
+        <p>Somos una clínica médica con un enfoque humano y profesional. Brindamos atención médica integral para todas las edades, comprometidos con la salud preventiva.</p>
+    </section>
+
+    <section>
+        <h2>Misión</h2>
+        <p>Brindar atención médica integral, accesible y de calidad para mejorar la salud y bienestar de nuestros pacientes.</p>
+    </section>
+
+    <section>
+        <h2>Visión</h2>
+        <p>Ser una clínica referente por excelencia, trato humano y compromiso con la salud preventiva.</p>
+    </section>
+
+    <section>
+        <h2>Valores</h2>
+        <ul>
+            <li>Ética profesional</li>
+            <li>Empatía</li>
+            <li>Diversidad</li>
+            <li>Honestidad</li>
+            <li>Responsabilidad</li>
+        </ul>
+    </section>
+
+    <section class="accordion">
+        <h2>Especialidades Médicas</h2>
+        <div class="accordion-item">
+            <h3>Medicina General</h3>
+            <div class="accordion-content">
+                <p>Atención primaria, diagnóstico y tratamiento de diversas afecciones generales.</p>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h3>Ginecología</h3>
+            <div class="accordion-content">
+                <p>Atención integral a la salud femenina, incluyendo controles preventivos y diagnósticos.</p>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h3>Urología</h3>
+            <div class="accordion-content">
+                <p>Especialidad médica centrada en los trastornos del tracto urinario y el sistema reproductivo masculino.</p>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h3>Pediatría</h3>
+            <div class="accordion-content">
+                <p>Atención médica para niños desde su nacimiento hasta la adolescencia.</p>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h3>Cardiología</h3>
+            <div class="accordion-content">
+                <p>Especialización en diagnóstico y tratamiento de enfermedades del corazón y sistema circulatorio.</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Agenda tu cita</h2>
+        <form id="appointmentForm">
+            <input type="text" name="nombre" placeholder="Nombre completo" required>
+            <input type="tel" name="telefono" placeholder="Teléfono" required>
+            <input type="email" name="correo" placeholder="Correo electrónico" required>
+            <select name="sexo" required>
+                <option value="">Selecciona tu sexo</option>
+                <option value="Femenino">Femenino</option>
+                <option value="Masculino">Masculino</option>
+                <option value="Otro">Otro</option>
+            </select>
+            <select name="especialidad" required>
+                <option value="">Selecciona una especialidad</option>
+                <option value="Medicina General">Medicina General</option>
+                <option value="Ginecología">Ginecología</option>
+                <option value="Urología">Urología</option>
+                <option value="Pediatría">Pediatría</option>
+                <option value="Cardiología">Cardiología</option>
+            </select>
+            <input type="date" name="fecha" required>
+            <input type="time" name="hora" required>
+            <textarea name="comentarios" placeholder="Comentarios adicionales (opcional)"></textarea>
+            <button type="submit">Agendar cita</button>
+        </form>
+
+        <div id="confirmationMessage" class="confirmation-message" style="display: none;">
+            ✅ Gracias, tu cita ha sido agendada.<br>
+            ⏳ Redirigiendo al inicio...<br>
+            🎉 Te contactaremos pronto.
+        </div>
+    </section>
+</div>
+
+<footer>
+    <p>&copy; 2025 Clínica Médica - Todos los derechos reservados</p>
+</footer>
+
+<script>
+    // Accordion functionality
+    document.querySelectorAll('.accordion-item').forEach(item => {
+        item.addEventListener('click', () => {
+            const content = item.querySelector('.accordion-content');
+            content.style.display = content.style.display === 'block' ? 'none' : 'block';
+        });
+    });
+
+    // Form submission handling
+    const form = document.getElementById('appointmentForm');
+    form.addEventListener('submit', (event) => {
+        event.preventDefault();
+
+        const formData = new FormData(form);
+        const data = Object.fromEntries(formData.entries());
+
+        fetch('https://script.google.com/macros/s/AKfycbwqkIOnrvtAlrmEtrGKkGku2HvRWF5fkBIkEIxtMuOcVLEMJiTs28IfXWPCAhge6m1Kow/exec', {
+            method: 'POST',
+            body: new URLSearchParams(data)
+        })
+        .then(response => response.json())
+        .then(() => {
+            document.getElementById('confirmationMessage').style.display = 'block';
+            setTimeout(() => {
+                document.getElementById('confirmationMessage').style.display = 'none';
+                form.reset();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }, 5000);
+        })
+        .catch(error => alert('Hubo un error al agendar tu cita.'));
+    });
+</script>
+
+</body>
+</html>
